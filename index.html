@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nestora Baby Living - Premium Nursery Furniture and Baby Room Styling">
+    <title>Nestora Baby Living | Premium Nursery Furniture</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar-custom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand">
+                <svg class="brand-logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                        d="M12 2a6 6 0 0 0-6 6v2H4v2h2v4a3 3 0 0 0-1 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8A3.01 3.01 0 0 0 11 16h2a3.01 3.01 0 0 0 2 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8a3 3 0 0 0-1-2.2v-4h2v-2h-2V8a6 6 0 0 0-6-6zm-4 8a4 4 0 0 1 8 0v2H8v-2zm-1 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                </svg>
+                Nestora
+            </a>
+
+            <nav class="d-none d-lg-flex align-items-center">
+                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="registry-services.html" class="nav-link">Registry</a>
+                <a href="assembly-delivery.html" class="nav-link">Delivery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-controls d-flex align-items-center">
+                <div class="d-none d-lg-flex align-items-center">
+                    <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <a href="signup.html" class="btn-primary-custom ms-2"
+                        style="padding: 8px 16px; font-size: 0.9rem;">Sign Up</a>
+                </div>
+                <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel"
+            style="background-color: var(--bg-primary);">
+            <div class="offcanvas-header border-bottom" style="border-color: var(--border-color) !important;">
+                <h5 class="offcanvas-title font-heading d-flex align-items-center" id="mobileMenuLabel"
+                    style="color: var(--text-primary); font-weight: 700;">
+                    <svg class="brand-logo-icon me-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 24px; height: 24px; color: var(--primary-color);">
+                        <path fill="currentColor"
+                            d="M12 2a6 6 0 0 0-6 6v2H4v2h2v4a3 3 0 0 0-1 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8A3.01 3.01 0 0 0 11 16h2a3.01 3.01 0 0 0 2 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8a3 3 0 0 0-1-2.2v-4h2v-2h-2V8a6 6 0 0 0-6-6zm-4 8a4 4 0 0 1 8 0v2H8v-2zm-1 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                    </svg>
+                    Nestora
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body py-4">
+                <nav class="d-flex flex-column gap-3">
+                    <a href="index.html" class="nav-link active">Home 1</a>
+                    <a href="home-2.html" class="nav-link">Home 2</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="registry-services.html" class="nav-link">Registry</a>
+                    <a href="assembly-delivery.html" class="nav-link">Delivery</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <hr class="my-2 border-secondary" style="opacity: 0.2;">
+                    <div class="d-flex gap-3 align-items-center justify-content-center">
+                        <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                    </div>
+                    <a href="signup.html" class="btn-primary-custom text-center w-100 mt-2" style="padding: 10px;">Sign
+                        Up</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1 - Nursery Furniture Hero -->
+        <section class="hero-wrapper bg-secondary-custom">
+            <div class="container">
+                <div class="row align-items-center hero-split py-5">
+                    <div class="col-lg-5 hero-text-col animate-slide-right">
+                        <h1 class="mb-4">Create Their Perfect First Space</h1>
+                        <p class="mb-5">Discover premium nursery furniture thoughtfully designed for comfort, safety,
+                            and timeless elegance.</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="products.html" class="btn-primary-custom">Explore Collection</a>
+                            <a href="registry-services.html" class="btn-secondary-custom">Create Your Nursery</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 animate-slide-left delay-200">
+                        <div class="position-relative">
+                            <img src="images/premium_nursery_hero.jpg" alt="Elegant Nursery Room"
+                                class="img-editorial shadow-lg w-100">
+                            <!-- Small decorative detail -->
+                            <div class="position-absolute bottom-0 start-0 bg-tertiary-custom p-4 shadow-sm animate-fade-up delay-400"
+                                style="transform: translate(-10%, 20%); border-radius: 12px;">
+                                <p class="mb-0 fw-bold font-heading">Premium Materials</p>
+                                <small class="text-sage">Sustainable Wood</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 - Furniture Collections -->
+        <section class="padding-y">
+            <div class="container">
+                <div class="text-center mb-5 animate-fade-up">
+                    <h2 class="text-sage">Shop by Collection</h2>
+                    <p>Beautifully crafted pieces for every nursery need.</p>
+                </div>
+                <div class="grid-cards">
+                    <!-- Card 1 -->
+                    <div class="premium-card animate-fade-up delay-100">
+                        <img src="https://images.pexels.com/photos/37185810/pexels-photo-37185810.jpeg"
+                            alt="Premium Baby Cribs">
+                        <div class="premium-card-body text-center">
+                            <h3 class="h4 mb-0">Cribs</h3>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="premium-card animate-fade-up delay-200">
+                        <img src="https://images.pexels.com/photos/5217124/pexels-photo-5217124.jpeg"
+                            alt="Nursery Gliders">
+                        <div class="premium-card-body text-center">
+                            <h3 class="h4 mb-0">Gliders</h3>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="premium-card animate-fade-up delay-300">
+                        <img src="https://images.pexels.com/photos/3933028/pexels-photo-3933028.jpeg"
+                            alt="Storage Dressers">
+                        <div class="premium-card-body text-center">
+                            <h3 class="h4 mb-0">Storage</h3>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="premium-card animate-fade-up delay-400">
+                        <img src="https://loremflickr.com/600/600/baby,changing?lock=5" alt="Changing Tables">
+                        <div class="premium-card-body text-center">
+                            <h3 class="h4 mb-0">Changing Tables</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 - Featured Nursery Sets -->
+        <section class="padding-y bg-secondary-custom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5 animate-fade-up">
+                    <div>
+                        <h2>Featured Sets</h2>
+                        <p class="mb-0">Curated collections for a cohesive room.</p>
+                    </div>
+                    <a href="products.html" class="btn-secondary-custom d-none d-md-inline-flex">View All</a>
+                </div>
+
+                <!-- Editorial Layout for Featured Sets -->
+                <div class="row align-items-center mb-5 animate-slide-left">
+                    <div class="col-md-7">
+                        <img src="https://loremflickr.com/800/500/nursery,furniture?lock=7" alt="The Oslo Collection"
+                            class="w-100 shadow-sm" style="border-radius: 20px; max-height: 350px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-4 offset-md-1 mt-4 mt-md-0">
+                        <h3 class="mb-3">The Oslo Collection</h3>
+                        <p>A beautiful blend of Scandinavian minimalism and warm textures. Perfect for modern parents.
+                        </p>
+                        <p class="premium-card-price">Starting from $1,299</p>
+                        <a href="products.html" class="text-terracotta fw-bold">Explore Set <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="row align-items-center animate-slide-right flex-md-row-reverse">
+                    <div class="col-md-7">
+                        <img src="images/heritage_collection.jpg" alt="The Heritage Collection" class="w-100 shadow-sm"
+                            style="border-radius: 20px; max-height: 350px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-4 offset-md-1 mt-4 mt-md-0">
+                        <h3 class="mb-3">The Heritage Collection</h3>
+                        <p>Classic lines and timeless craftsmanship. Built to last through generations of memories.</p>
+                        <p class="premium-card-price">Starting from $1,599</p>
+                        <a href="products.html" class="text-terracotta fw-bold">Explore Set <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5 d-md-none">
+                    <a href="products.html" class="btn-secondary-custom w-100">View All Sets</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 - Designed for Their First Years -->
+        <section class="padding-y">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 animate-fade-in">
+                        <img src="https://loremflickr.com/600/700/wood,furniture?lock=9" alt="Craftsmanship detail"
+                            class="w-100"
+                            style="border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; height: 600px; object-fit: cover;">
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 animate-slide-left">
+                        <h2 class="mb-4">Designed for Their First Years</h2>
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold">Comfort & Safety</h4>
+                            <p>Every piece is GREENGUARD Gold Certified, ensuring the air your baby breathes is clean.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold">Practical Storage</h4>
+                            <p>Soft-close drawers and convertible changing tables make late-night routines easier.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold">Timeless Craftsmanship</h4>
+                            <p>Solid wood construction that converts and grows with your child from infant to toddler.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 - Nursery Registry -->
+        <section class="padding-y bg-tertiary-custom position-relative overflow-hidden"
+            style="border-top: 1px solid var(--border-color);">
+            <div class="container position-relative z-1">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8 animate-fade-up">
+                        <h2 class="mb-4">Build Your Dream Registry</h2>
+                        <p class="lead mb-5">Get personalized guidance from our nursery experts and easily share your
+                            beautifully curated wishlist with friends and family.</p>
+
+                        <div class="row g-4 mb-5 text-start">
+                            <div class="col-md-4">
+                                <div class="p-4 bg-secondary-custom h-100 rounded text-center">
+                                    <i class="bi bi-card-checklist fs-1 text-sage mb-3"></i>
+                                    <h4 class="h5">Planning</h4>
+                                    <p class="small mb-0">Curated checklists.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4 bg-secondary-custom h-100 rounded text-center">
+                                    <i class="bi bi-people fs-1 text-terracotta mb-3"></i>
+                                    <h4 class="h5">Guidance</h4>
+                                    <p class="small mb-0">Expert advice.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4 bg-secondary-custom h-100 rounded text-center">
+                                    <i class="bi bi-gift fs-1 text-sage mb-3"></i>
+                                    <h4 class="h5">Gifting</h4>
+                                    <p class="small mb-0">Easy sharing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="registry-services.html" class="btn-primary-custom">Start Your Registry</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 - Final CTA -->
+        <section class="padding-y text-center text-white" style="background-color: #2c2c2c;">
+            <div class="container animate-fade-in">
+                <h2 class="text-white mb-4">Beautiful Spaces for Little Beginnings.</h2>
+                <p class="text-white opacity-75 mb-5 mx-auto" style="max-width: 600px;">Ready to create the nursery
+                    you've been dreaming of? Explore our collections or get in touch for a personal consultation.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="products.html" class="btn-primary-custom"
+                        style="background-color: #fff; color: #2c2c2c; border-color: #fff;"
+                        onmouseover="this.style.backgroundColor='transparent'; this.style.color='#fff';"
+                        onmouseout="this.style.backgroundColor='#fff'; this.style.color='#2c2c2c';">Explore Products</a>
+                    <a href="contact.html" class="btn-secondary-custom" style="border-color: #fff; color: #fff;"
+                        onmouseover="this.style.backgroundColor='#fff'; this.style.color='#2c2c2c';"
+                        onmouseout="this.style.backgroundColor='transparent'; this.style.color='#fff';">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 pe-lg-5">
+                    <a href="index.html" class="navbar-brand mb-4 d-inline-flex">
+                        <svg class="brand-logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor"
+                                d="M12 2a6 6 0 0 0-6 6v2H4v2h2v4a3 3 0 0 0-1 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8A3.01 3.01 0 0 0 11 16h2a3.01 3.01 0 0 0 2 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8a3 3 0 0 0-1-2.2v-4h2v-2h-2V8a6 6 0 0 0-6-6zm-4 8a4 4 0 0 1 8 0v2H8v-2zm-1 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                        </svg>
+                        Nestora
+                    </a>
+                    <p class="text-secondary mb-4">Premium nursery furniture thoughtfully designed for modern families.
+                        Creating safe, beautiful, and functional spaces for your little ones to grow.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-icon-link fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-link fs-4"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-link fs-4"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="footer-title">Shop</h4>
+                    <a href="products.html" class="footer-link">All Products</a>
+                    <a href="#" class="footer-link">Cribs</a>
+                    <a href="#" class="footer-link">Gliders</a>
+                    <a href="#" class="footer-link">Storage</a>
+                    <a href="#" class="footer-link">Nursery Sets</a>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="footer-title">Services</h4>
+                    <a href="registry-services.html" class="footer-link">Registry</a>
+                    <a href="assembly-delivery.html" class="footer-link">Delivery & Assembly</a>
+                    <a href="registry-services.html" class="footer-link">Consultation</a>
+                    <a href="contact.html" class="footer-link">Support</a>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">Join Our Newsletter</h4>
+                    <p class="text-secondary mb-3">Subscribe for nursery inspiration and exclusive offers.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="custom-form-control" placeholder="Email address" required>
+                        <button type="submit" class="btn-primary-custom" style="padding: 10px 20px;">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+                <div>&copy; 2026 Nestora Baby Living. All rights reserved.</div>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-md-0">
+                    <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+                    <a href="#" class="social-icon-link ms-md-3" aria-label="Back to top"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                        <i class="bi bi-arrow-up-square-fill fs-3" style="color: var(--accent-terracotta);"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
