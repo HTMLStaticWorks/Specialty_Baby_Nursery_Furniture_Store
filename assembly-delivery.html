@@ -16,6 +16,9 @@
         .process-icon-wrap { width: 60px; height: 60px; background-color: var(--bg-tertiary); border: 2px solid var(--accent-sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; color: var(--accent-sage); transition: all 0.3s ease; }
         .process-step:hover .process-icon-wrap { background-color: var(--accent-sage); color: #fff; transform: scale(1.1); }
         .process-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 5px; }
+        @media (min-width: 992px) {
+            .process-title { min-height: 3.3rem; }
+        }
 
         @media (max-width: 991px) {
             .process-track { flex-direction: column; align-items: flex-start; padding-left: 30px; }
@@ -200,14 +203,14 @@
         <!-- Section 4 - Delivery Experience -->
         <section class="padding-y bg-secondary-custom">
             <div class="container">
-                <div class="row align-items-center flex-lg-row-reverse">
+                <div class="row align-items-center flex-lg-row-reverse justify-content-between">
                     <div class="col-lg-6 mb-5 mb-lg-0 animate-slide-left">
                         <div class="row g-3">
                             <div class="col-6">
-                                <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg" alt="Delivery Team" class="w-100 rounded shadow-sm h-100 object-fit-cover">
+                                <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg" alt="Delivery Team" class="w-100 rounded shadow-sm object-fit-cover" style="height: 450px;">
                             </div>
                             <div class="col-6">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLrZny8FOhLBNBlkaHubbi26XySEc39-Dp9Rz3j_hQA&s=10" alt="Happy Customer" class="w-100 rounded shadow-sm h-100 object-fit-cover mt-4">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLrZny8FOhLBNBlkaHubbi26XySEc39-Dp9Rz3j_hQA&s=10" alt="Happy Customer" class="w-100 rounded shadow-sm object-fit-cover mt-4" style="height: 450px;">
                             </div>
                         </div>
                     </div>

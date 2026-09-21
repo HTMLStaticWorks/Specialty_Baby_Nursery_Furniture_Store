@@ -13,10 +13,31 @@
     <style>
         /* Home 2 Specific Layouts */
         .editorial-hero {
-            min-height: 90vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             position: relative;
+        }
+        @media (max-width: 991px) {
+            .editorial-hero {
+                min-height: 50vh;
+                margin: 20px;
+                border-radius: var(--border-radius-md, 8px);
+            }
+        }
+        @media (max-width: 767px) {
+            .editorial-hero {
+                min-height: 40vh;
+                margin: 15px;
+                border-radius: var(--border-radius-md, 8px);
+            }
+            .editorial-hero .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            .editorial-hero .display-3 {
+                font-size: 2.5rem;
+            }
         }
 
         .editorial-hero-img {
@@ -109,6 +130,13 @@
         @media (max-width: 767px) {
             .offset-card {
                 width: 100%;
+            }
+            .offset-card-title {
+                left: 10px;
+            }
+            [dir="rtl"] .offset-card-title {
+                left: auto;
+                right: 10px;
             }
 
             .editorial-hero-img {
@@ -210,7 +238,7 @@
     <main>
         <!-- Section 1 - Editorial Nursery Hero -->
         <section class="editorial-hero text-center d-flex align-items-center"
-            style="min-height: 70vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/home2_hero.jpg') center/cover no-repeat;">
+            style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/home2_hero.jpg') center/cover no-repeat;">
             <div class="container text-white py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 animate-fade-up">
@@ -252,7 +280,7 @@
                     </div>
                     <div class="offset-card animate-fade-up delay-300">
                         <a href="products.html">
-                            <img src="https://images.pexels.com/photos/8031964/pexels-photo-8031964.jpeg" alt="Storage"
+                            <img src="https://images.pexels.com/photos/3933028/pexels-photo-3933028.jpeg" alt="Storage"
                                 class="w-100">
                             <h3 class="h4 offset-card-title m-0">Storage</h3>
                         </a>
@@ -266,7 +294,7 @@
                     </div>
                     <div class="offset-card animate-fade-up delay-100 mt-md-4 mt-lg-0">
                         <a href="products.html">
-                            <img src="https://images.pexels.com/photos/12056684/pexels-photo-12056684.jpeg"
+                            <img src="https://loremflickr.com/600/800/baby,accessories?lock=5"
                                 alt="Accessories" class="w-100">
                             <h3 class="h4 offset-card-title m-0">Accessories</h3>
                         </a>
@@ -288,7 +316,7 @@
                     </div>
                 </div>
 
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6 animate-fade-up delay-100">
                         <div class="position-relative overflow-hidden rounded group h-100">
                             <img src="https://images.pexels.com/photos/3958952/pexels-photo-3958952.jpeg"
@@ -296,7 +324,7 @@
                             <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-dark text-white"
                                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h3 class="h4">The Aspen Convertible Crib</h3>
-                                <p class="mb-3">$899.00</p>
+                                <p class="mb-3 text-white" style="opacity: 0.9;">$899.00</p>
                                 <a href="products.html" class="btn btn-outline-light rounded-pill btn-sm">Shop Piece</a>
                             </div>
                         </div>
@@ -308,7 +336,7 @@
                             <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-dark text-white"
                                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h3 class="h4">Cloud Glider</h3>
-                                <p class="mb-3">$749.00</p>
+                                <p class="mb-3 text-white" style="opacity: 0.9;">$749.00</p>
                                 <a href="products.html" class="btn btn-outline-light rounded-pill btn-sm">Shop Piece</a>
                             </div>
                         </div>
@@ -320,7 +348,7 @@
                             <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-dark text-white"
                                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h3 class="h4">Aspen Dresser</h3>
-                                <p class="mb-3">$1,099.00</p>
+                                <p class="mb-3 text-white" style="opacity: 0.9;">$1,099.00</p>
                                 <a href="products.html" class="btn btn-outline-light rounded-pill btn-sm">Shop Piece</a>
                             </div>
                         </div>
