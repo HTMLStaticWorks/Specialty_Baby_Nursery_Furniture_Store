@@ -232,11 +232,127 @@ img {
 
 /* Mobile Nav Toggle */
 .navbar-toggler {
-  border: none;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-secondary);
   color: var(--text-primary);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.navbar-toggler:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
 }
 .navbar-toggler:focus {
   box-shadow: none;
+}
+
+/* ========================================================
+   Responsive Navbar (Hamburger icon below 1200px, including 1024px)
+   ======================================================== */
+.navbar-custom {
+  overflow-x: clip;
+}
+
+.navbar-custom .container {
+  flex-wrap: nowrap !important;
+}
+
+.navbar-brand {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.navbar-custom .container > nav {
+  white-space: nowrap;
+  flex-shrink: 1;
+}
+
+.nav-controls {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-nav-cta {
+  white-space: nowrap;
+}
+
+/* Tablet & Mobile Screens (< 1200px, specifically covering 1024px) */
+@media (max-width: 1199.98px) {
+  .navbar-custom {
+    padding: 14px 0;
+  }
+  .navbar-custom .container > nav {
+    display: none !important;
+  }
+  .navbar-custom .desktop-nav-actions {
+    display: none !important;
+  }
+  .navbar-custom .navbar-toggler {
+    display: inline-flex !important;
+  }
+}
+
+/* Desktop Screens (>= 1200px) */
+@media (min-width: 1200px) {
+  .navbar-custom .container > nav {
+    display: flex !important;
+  }
+  .navbar-custom .desktop-nav-actions {
+    display: flex !important;
+  }
+  .navbar-custom .navbar-toggler {
+    display: none !important;
+  }
+  .nav-link {
+    font-size: 0.88rem;
+    margin: 0 8px;
+  }
+  .btn-cta-quote.btn-nav-cta {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+  .navbar-custom .btn-primary-custom {
+    padding: 8px 18px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Offcanvas Mobile/Tablet Drawer Menu */
+.offcanvas,
+.offcanvas-body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary);
+}
+.offcanvas nav,
+.offcanvas-body nav {
+  display: flex !important;
+  flex-direction: column !important;
+  white-space: normal !important;
+}
+.offcanvas .nav-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary) !important;
+  padding: 10px 0;
+  margin: 0;
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+}
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link.active {
+  color: var(--accent-terracotta) !important;
+}
+.offcanvas .btn-cta-quote,
+.offcanvas .btn-primary-custom {
+  white-space: normal !important;
+  display: flex !important;
 }
 
 /* Footer */
