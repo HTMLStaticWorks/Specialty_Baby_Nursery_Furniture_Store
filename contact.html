@@ -45,20 +45,24 @@
             <nav class="d-none d-lg-flex align-items-center">
                 <a href="index.html" class="nav-link">Home 1</a>
                 <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <a href="products.html" class="nav-link">Products</a>
                 <a href="registry-services.html" class="nav-link">Registry</a>
                 <a href="assembly-delivery.html" class="nav-link">Delivery</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </nav>
             <div class="nav-controls d-flex align-items-center">
-                <div class="d-none d-lg-flex align-items-center">
+                <div class="d-none d-lg-flex align-items-center gap-2">
                     <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
-                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-moon"></i>
                     </button>
                     <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
                         <i class="bi bi-arrow-left-right"></i>
                     </button>
-                    <a href="signup.html" class="btn-primary-custom ms-2" style="padding: 8px 16px; font-size: 0.9rem;">Sign Up</a>
+                    <a href="#quoteModal" data-bs-toggle="modal" class="btn-cta-quote btn-nav-cta">
+                        <i class="bi bi-calculator"></i> Get a Quote
+                    </a>
+                    <a href="signup.html" class="btn-primary-custom" style="padding: 8px 16px; font-size: 0.85rem;">Sign Up</a>
                 </div>
                 <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
                     <i class="bi bi-list fs-2"></i>
@@ -69,7 +73,7 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" style="background-color: var(--bg-primary);">
             <div class="offcanvas-header border-bottom" style="border-color: var(--border-color) !important;">
                 <h5 class="offcanvas-title font-heading d-flex align-items-center" id="mobileMenuLabel" style="color: var(--text-primary); font-weight: 700;">
-                    <svg class="brand-logo-icon me-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: var(--primary-color);">
+                    <svg class="brand-logo-icon me-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
                         <path fill="currentColor" d="M12 2a6 6 0 0 0-6 6v2H4v2h2v4a3 3 0 0 0-1 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8A3.01 3.01 0 0 0 11 16h2a3.01 3.01 0 0 0 2 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8a3 3 0 0 0-1-2.2v-4h2v-2h-2V8a6 6 0 0 0-6-6zm-4 8a4 4 0 0 1 8 0v2H8v-2zm-1 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                     </svg>
                     Nestora
@@ -80,6 +84,7 @@
                 <nav class="d-flex flex-column gap-3">
                     <a href="index.html" class="nav-link">Home 1</a>
                     <a href="home-2.html" class="nav-link">Home 2</a>
+                    <a href="about.html" class="nav-link">About Us</a>
                     <a href="products.html" class="nav-link">Products</a>
                     <a href="registry-services.html" class="nav-link">Registry</a>
                     <a href="assembly-delivery.html" class="nav-link">Delivery</a>
@@ -87,12 +92,15 @@
                     <hr class="my-2 border-secondary" style="opacity: 0.2;">
                     <div class="d-flex gap-3 align-items-center justify-content-center">
                         <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
-                            <i class="bi bi-moon-stars"></i>
+                            <i class="bi bi-moon"></i>
                         </button>
                         <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
+                    <a href="#quoteModal" data-bs-toggle="modal" class="btn-cta-quote text-center w-100 mt-2 justify-content-center">
+                        <i class="bi bi-calculator"></i> Get a Quote
+                    </a>
                     <a href="signup.html" class="btn-primary-custom text-center w-100 mt-2" style="padding: 10px;">Sign Up</a>
                 </nav>
             </div>
@@ -100,11 +108,15 @@
     </header>
 
     <main>
-        <!-- Section 1 - Contact Hero -->
-        <section class="contact-hero text-center position-relative overflow-hidden d-flex align-items-center" style="min-height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/36276506/pexels-photo-36276506.jpeg') center/cover no-repeat;">
+        <!-- Section 1 - Contact Hero (Consistent Height matching subpages) -->
+        <section class="contact-hero text-center position-relative overflow-hidden d-flex align-items-center" style="background: linear-gradient(rgba(26,24,30,0.55), rgba(26,24,30,0.55)), url('https://images.pexels.com/photos/36276506/pexels-photo-36276506.jpeg') center/cover no-repeat;">
             <div class="container position-relative z-2 animate-fade-up">
-                <h1 class="display-4 font-heading mb-4 text-white">Let's Create Their Perfect Space.</h1>
-                <p class="lead mx-auto mb-0 text-white" style="max-width: 600px; opacity: 0.9;">Whether you have a question about our collections or want to schedule a design consultation, we're here to help.</p>
+                <span class="badge px-3 py-2 rounded-pill mb-3" style="background: rgba(180, 166, 199, 0.3); backdrop-filter: blur(8px); border: 1px solid var(--accent-sage); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;">
+                    Concierge & Support
+                </span>
+                <h1 class="display-4 font-heading mb-3 text-white">Let's Create Their Perfect Space.</h1>
+                <p class="lead mx-auto mb-4 text-white opacity-90" style="max-width: 650px;">Whether you have a question about crib safety certifications, wish to customize an archival keepsake frame, or need an itemized nursery quote, our team is here for you.</p>
+
             </div>
         </section>
 
@@ -226,7 +238,7 @@
         </section>
 
         <!-- Section 4 - Store Location -->
-        <section class="padding-y bg-secondary-custom">
+        <section class="padding-y bg-secondary-custom" id="storeLocation">
             <div class="container animate-fade-in">
                 <div class="text-center mb-5">
                     <h2>Visit Our Showroom</h2>
@@ -307,8 +319,218 @@
                     </a>
                 </div>
             </div>
+    <!-- Modals (Customizer & Quote Request) -->
+    <!-- Frame Customizer Modal -->
+    <div class="modal fade" id="frameCustomizerModal" tabindex="-1" aria-labelledby="frameCustomizerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header">
+                    <div>
+                        <h4 class="modal-title font-heading mb-1" id="frameCustomizerModalLabel">Nursery Frame & Keepsake Studio</h4>
+                        <p class="small text-secondary mb-0">Design custom solid-wood framing for baby birth announcements, milestone prints, and heirlooms.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="frame-preview-wrapper h-100">
+                                <div class="interactive-frame" id="customFrameBorder" style="border: 14px solid #C8A575; border-radius: 4px;">
+                                    <div class="frame-inner-mat" id="customFrameMat" style="background-color: #FCFBFF; padding: 18px;">
+                                        <div class="frame-art-content shadow-sm">
+                                            <div class="mb-2">
+                                                <i class="bi bi-flower1 fs-1 text-sage"></i>
+                                            </div>
+                                            <h5 class="font-heading mb-1" id="previewNameText">Baby Name</h5>
+                                            <small class="text-secondary d-block" id="previewDateText">Est. 2026</small>
+                                            <span class="badge bg-secondary-custom text-terracotta mt-2" style="font-size: 0.7rem; border: 1px solid var(--border-color);">
+                                                99% UV-Shield Museum Glass
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-center">
+                                    <small class="text-secondary">Selected: <strong id="selectedFinishLabel">Solid Oak</strong> + <strong id="selectedMatLabel">Ivory Cream</strong> (<strong id="selectedSizeLabel">16" x 20"</strong>)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">1. Choose Wood Moulding</label>
+                                <div class="swatch-group">
+                                    <button type="button" class="swatch-btn finish-swatch-btn active" data-border-color="#C8A575" data-finish-name="Appalachian Natural Oak" style="background-color: #C8A575;" title="Natural Oak"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#5C4033" data-finish-name="Warm American Walnut" style="background-color: #5C4033;" title="American Walnut"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#EAE6DF" data-finish-name="Cloud White Satin" style="background-color: #EAE6DF;" title="Cloud White"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#8C847E" data-finish-name="Driftwood Grey" style="background-color: #8C847E;" title="Driftwood Grey"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#C5A059" data-finish-name="Brushed Champagne Brass" style="background-color: #C5A059;" title="Champagne Brass"></button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">2. Select Museum Mat Color</label>
+                                <div class="swatch-group">
+                                    <button type="button" class="swatch-btn mat-swatch-btn active" data-mat-color="#FCFBFF" data-mat-name="Ivory Cream" style="background-color: #FCFBFF; border: 1px solid #ccc;" title="Ivory Cream"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#D8E2DC" data-mat-name="Sage Mist" style="background-color: #D8E2DC;" title="Sage Mist"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#ECE4DB" data-mat-name="Warm Oatmeal Linen" style="background-color: #ECE4DB;" title="Warm Oatmeal"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#F1E3E4" data-mat-name="Powder Blush" style="background-color: #F1E3E4;" title="Powder Blush"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#E2E2EA" data-mat-name="Soft Lavender Grey" style="background-color: #E2E2EA;" title="Soft Lavender Grey"></button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">3. Frame Dimensions</label>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="149" data-size-label="11&quot; x 14&quot;">11" x 14" ($149)</button>
+                                    <button type="button" class="swatch-pill size-select-pill active" data-price="199" data-size-label="16&quot; x 20&quot;">16" x 20" ($199)</button>
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="249" data-size-label="18&quot; x 24&quot;">18" x 24" ($249)</button>
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="329" data-size-label="24&quot; x 36&quot;">24" x 36" ($329)</button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">4. Personalized Nameplate Engraving</label>
+                                <input type="text" class="custom-form-control mb-2" id="customNameplateName" placeholder="Baby Name (e.g., Charlotte Eliza)" maxlength="32">
+                                <input type="text" class="custom-form-control" id="customNameplateDate" placeholder="Date & Details (e.g., Born: 10.14.2026 | 7 lbs 4 oz)" maxlength="48">
+                            </div>
+
+                            <div class="quote-summary-box d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <small class="text-secondary d-block">Estimated Investment</small>
+                                    <h4 class="font-heading mb-0 text-terracotta" id="customFramePrice">$234</h4>
+                                </div>
+                                <button type="button" class="btn-primary-custom" id="btnSaveCustomFrame">Save & Add To Order</button>
+                            </div>
+
+                            <div id="customFrameSuccessAlert" class="alert alert-success d-none py-2 small mb-0">
+                                <i class="bi bi-check-circle-fill me-1"></i> Custom frame specifications saved to your nursery bag!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Get a Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header">
+                    <div>
+                        <h4 class="modal-title font-heading mb-1" id="quoteModalLabel">Nursery Furniture & Framing Quote</h4>
+                        <p class="small text-secondary mb-0">Select your preferred pieces to instantly calculate costs and receive an itemized proposal.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="nurseryQuoteForm">
+                        <div class="row g-4">
+                            <div class="col-md-7">
+                                <h5 class="h6 text-uppercase fw-bold mb-3 text-secondary">1. Select Nursery Items</h5>
+                                <div class="list-group mb-3">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="699" checked>
+                                            <strong>Aspen Convertible 4-in-1 Crib</strong>
+                                            <small class="d-block text-secondary">GREENGUARD Gold certified Appalachian Oak</small>
+                                        </div>
+                                        <span class="fw-bold">$699</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="749" checked>
+                                            <strong>Cloud Bouclé Nursery Glider</strong>
+                                            <small class="d-block text-secondary">360° whisper glide with stain-resistant fabric</small>
+                                        </div>
+                                        <span class="fw-bold">$749</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="849" checked>
+                                            <strong>6-Drawer Soft-Close Dresser</strong>
+                                            <small class="d-block text-secondary">English dovetail solid wood joinery</small>
+                                        </div>
+                                        <span class="fw-bold">$849</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="149">
+                                            <strong>Universal Changing Table Topper</strong>
+                                            <small class="d-block text-secondary">Attaches securely with anti-scratch felt</small>
+                                        </div>
+                                        <span class="fw-bold">$149</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="199" checked>
+                                            <strong>Archival Keepsake Art & Memory Frame</strong>
+                                            <small class="d-block text-secondary">99% UV museum glass & engraved nameplate</small>
+                                        </div>
+                                        <span class="fw-bold">$199</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-check p-3 bg-secondary-custom rounded mb-3">
+                                    <input class="form-check-input" type="checkbox" id="quoteAssemblyCheck" checked>
+                                    <label class="form-check-label fw-bold" for="quoteAssemblyCheck">
+                                        Include White-Glove In-Room Assembly & Packaging Removal
+                                    </label>
+                                    <small class="d-block text-secondary" id="quoteAssemblyNote">Complimentary on orders $1,500+</small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="quote-summary-box mb-4">
+                                    <h5 class="font-heading mb-3">Cost Breakdown</h5>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-secondary">Subtotal:</span>
+                                        <strong id="quoteSubtotalDisplay">$2,496</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2 text-success">
+                                        <span>Nursery Bundle Discount (15%):</span>
+                                        <strong id="quoteDiscountDisplay">-$374</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3 text-secondary">
+                                        <span>White-Glove Delivery:</span>
+                                        <span class="text-success fw-bold">FREE</span>
+                                    </div>
+                                    <hr class="border-color">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 mb-0">Total Estimated:</span>
+                                        <h4 class="font-heading text-terracotta mb-0" id="quoteTotalDisplay">$2,122</h4>
+                                    </div>
+                                </div>
+
+                                <h5 class="h6 text-uppercase fw-bold mb-3 text-secondary">2. Contact Details</h5>
+                                <div class="mb-2">
+                                    <input type="text" class="custom-form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="email" class="custom-form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="custom-form-control" placeholder="Phone Number">
+                                </div>
+                                <button type="submit" class="btn-primary-custom w-100 py-3">Submit Quote Request</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="quoteSuccessMessage" class="d-none text-center py-4">
+                        <i class="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
+                        <h4 class="font-heading mb-2">Quote Generated Successfully!</h4>
+                        <p class="text-secondary mb-3">Your custom nursery estimate reference is <strong id="quoteReferenceCode" class="text-primary">NST-847291</strong>. An itemized proposal has been sent to your email.</p>
+                        <a href="products.html" class="btn-primary-custom">Explore Matching Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

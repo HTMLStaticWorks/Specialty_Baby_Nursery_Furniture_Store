@@ -345,13 +345,62 @@ img {
   }
 }
 
-/* Hero Section Base */
-.hero-wrapper {
+/* Consistent Hero Section Heights Across All Pages */
+.hero-wrapper, .editorial-hero {
   position: relative;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: 72vh;
+  max-height: 700px;
   display: flex;
   align-items: center;
+}
+
+.page-hero, .subpage-hero, .about-hero, .contact-hero, .delivery-hero, .registry-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  max-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+}
+
+@media (max-width: 991px) {
+  .hero-wrapper,
+  .editorial-hero {
+    min-height: 540px;
+    max-height: none;
+    padding: 60px 0;
+  }
+  .page-hero,
+  .subpage-hero,
+  .about-hero,
+  .contact-hero,
+  .delivery-hero,
+  .registry-hero {
+    min-height: 420px;
+    max-height: none;
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-wrapper,
+  .editorial-hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  .page-hero,
+  .subpage-hero,
+  .about-hero,
+  .contact-hero,
+  .delivery-hero,
+  .registry-hero {
+    min-height: 340px;
+    padding: 40px 0;
+  }
 }
 
 /* Card Layouts */
@@ -394,17 +443,22 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-@media (max-width: 1200px) {
-  .grid-cards { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 1200px) and (min-width: 992px) {
-  .grid-cards > :nth-child(4):last-child {
-    grid-column: 2;
+@media (min-width: 992px) {
+  /* Center the 5th & 6th cards in row 2 of the 4-column grid */
+  .grid-cards > :nth-child(5):nth-last-child(2),
+  .grid-cards > .grid-card-col-start-2 {
+    grid-column-start: 2;
   }
 }
 @media (max-width: 991px) {
-  /* Tablet 2x2 with centered 5th */
-  .grid-cards { grid-template-columns: repeat(2, 1fr); }
+  /* Tablet 2 columns: 3 balanced rows of 2 cards */
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-cards > :nth-child(5):nth-last-child(2),
+  .grid-cards > .grid-card-col-start-2 {
+    grid-column-start: auto;
+  }
   .grid-cards > :nth-child(5):last-child {
     grid-column: 1 / -1;
     justify-self: center;
@@ -413,7 +467,9 @@ img {
 }
 @media (max-width: 767px) {
   /* Mobile stack */
-  .grid-cards { grid-template-columns: 1fr; }
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
   .grid-cards > :nth-child(5):last-child {
     width: 100%;
   }
@@ -506,3 +562,864 @@ img {
     transform: translate(-5%, 10%);
   }
 }
+
+/* ========================================================
+   Action CTAs: Customize Frame, Shop Now, Get a Quote
+   ======================================================== */
+.btn-cta-quote {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF !important;
+  border: 1px solid var(--accent-terracotta);
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-cta-quote:hover {
+  background-color: var(--accent-terracotta-hover);
+  border-color: var(--accent-terracotta-hover);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(140, 122, 158, 0.35);
+}
+
+.btn-cta-customize {
+  background-color: transparent;
+  color: var(--text-primary) !important;
+  border: 1.5px solid var(--accent-terracotta);
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-cta-customize:hover {
+  background-color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(140, 122, 158, 0.25);
+}
+
+.btn-cta-shop {
+  background-color: var(--text-primary);
+  color: var(--bg-primary) !important;
+  border: 1px solid var(--text-primary);
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-cta-shop:hover {
+  background-color: transparent;
+  color: var(--text-primary) !important;
+  transform: translateY(-2px);
+}
+
+.btn-nav-cta {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+/* ========================================================
+   Featured Artwork & Nursery Framing Showcase
+   ======================================================== */
+.artwork-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background-color: var(--bg-secondary);
+  color: var(--accent-terracotta);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.artwork-card {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.artwork-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-sage);
+}
+.artwork-img-box {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background-color: var(--bg-secondary);
+}
+.artwork-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 0;
+}
+.artwork-card:hover .artwork-img-box img {
+  transform: scale(1.05);
+}
+.artwork-glass-spec {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2B2930;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+[data-theme="dark"] .artwork-glass-spec {
+  background: rgba(30, 28, 35, 0.9);
+  color: #FCFBFF;
+}
+[dir="rtl"] .artwork-glass-spec {
+  left: auto;
+  right: 12px;
+}
+
+/* ========================================================
+   Customization Options Section & Frame Studio
+   ======================================================== */
+.customizer-box {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+.frame-preview-wrapper {
+  background: radial-gradient(circle, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  text-align: center;
+}
+.interactive-frame {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+  transition: all 0.35s ease;
+  max-width: 280px;
+  width: 100%;
+  position: relative;
+}
+.frame-inner-mat {
+  padding: 16px;
+  background-color: #FCFBFF;
+  transition: background-color 0.3s ease;
+}
+.frame-art-content {
+  background-color: #FFFFFF;
+  padding: 24px 16px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.swatch-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.swatch-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  outline: none;
+}
+.swatch-btn:hover {
+  transform: scale(1.1);
+}
+.swatch-btn.active {
+  border-color: var(--text-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--bg-tertiary);
+}
+.swatch-pill {
+  padding: 6px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+}
+.swatch-pill:hover,
+.swatch-pill.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* ========================================================
+   Preservation Benefits
+   ======================================================== */
+.preservation-card {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 26px;
+  height: 100%;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.preservation-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-sage);
+  box-shadow: var(--shadow-md);
+}
+.preservation-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1.5px solid var(--accent-sage);
+  color: var(--accent-terracotta);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.preservation-card:hover .preservation-icon-wrap {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF;
+  border-color: var(--accent-terracotta);
+}
+
+/* ========================================================
+   Special Offers & Nursery Bundles
+   ======================================================== */
+.offer-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-terracotta);
+}
+.offer-card.featured-offer {
+  border: 2px solid var(--accent-terracotta);
+  background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+.offer-ribbon {
+  position: absolute;
+  top: 18px;
+  right: -36px;
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+[dir="rtl"] .offer-ribbon {
+  right: auto;
+  left: -36px;
+  transform: rotate(-45deg);
+}
+.promo-code-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-secondary);
+  border: 1.5px dashed var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  user-select: all;
+}
+
+/* Horizontal Button Alignment Inside Offer Cards */
+.offer-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+}
+.offer-actions > .btn-cta-quote,
+.offer-actions > .btn-cta-customize,
+.offer-actions > .btn-cta-shop,
+.offer-actions > .btn-secondary-custom {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: 8px 10px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  margin-bottom: 0 !important;
+  height: 42px;
+  box-sizing: border-box;
+}
+.offer-actions > .btn-cta-quote i,
+.offer-actions > .btn-cta-customize i {
+  font-size: 0.85rem;
+  margin-right: 2px;
+}
+[dir="rtl"] .offer-actions > .btn-cta-quote i,
+[dir="rtl"] .offer-actions > .btn-cta-customize i {
+  margin-right: 0;
+  margin-left: 2px;
+}
+@media (max-width: 380px) {
+  .offer-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .offer-actions > .btn-cta-quote,
+  .offer-actions > .btn-cta-customize,
+  .offer-actions > .btn-cta-shop,
+  .offer-actions > .btn-secondary-custom {
+    width: 100% !important;
+    flex: 1 1 100%;
+  }
+}
+
+/* ========================================================
+   Customer Reviews & Ratings
+   ======================================================== */
+.review-card {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.stars-group {
+  color: #E2A03F;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-sage);
+}
+.verified-buyer-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2e7d32;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+[data-theme="dark"] .verified-buyer-tag {
+  color: #66bb6a;
+}
+
+/* ========================================================
+   Materials & Finishes / Safety Standards
+   ======================================================== */
+.material-card {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  height: 100%;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.material-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-sage);
+}
+.material-sample-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 16px;
+}
+.safety-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+.safety-pill-badge i {
+  color: var(--accent-terracotta);
+  font-size: 1.15rem;
+}
+
+/* ========================================================
+   About Us Specialized Styling
+   ======================================================== */
+.story-milestone {
+  border-left: 3px solid var(--accent-sage);
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 32px;
+}
+[dir="rtl"] .story-milestone {
+  border-left: none;
+  border-right: 3px solid var(--accent-sage);
+  padding-left: 0;
+  padding-right: 24px;
+}
+.craftsmanship-feature-card {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 28px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.craftsmanship-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-terracotta);
+}
+
+/* ========================================================
+   Interactive Modals (Customizer & Quote Request)
+   ======================================================== */
+.modal-content-custom {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.modal-content-custom .modal-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 28px;
+}
+.modal-content-custom .modal-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 18px 28px;
+}
+.quote-summary-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 20px;
+}
+
+/* ========================================================
+   Product Cards & Nursery Furniture Commerce Components
+   ======================================================== */
+.product-card-modern {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-sage);
+}
+.product-card-modern h3,
+.product-card-modern h5,
+.product-card-modern h6 {
+  color: var(--text-primary);
+}
+.product-card-modern a.product-title-link,
+.product-card-modern h3 a,
+.product-card-modern h5 a,
+.product-card-modern h6 a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.product-card-modern a.product-title-link:hover,
+.product-card-modern h3 a:hover,
+.product-card-modern h5 a:hover,
+.product-card-modern h6 a:hover {
+  color: var(--accent-terracotta);
+}
+
+.product-img-box {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background-color: var(--bg-secondary);
+}
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 0;
+}
+.product-card-modern:hover .product-img-box img {
+  transform: scale(1.06);
+}
+.product-badge-corner {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+[dir="rtl"] .product-badge-corner {
+  left: auto;
+  right: 14px;
+}
+.product-badge-corner.bg-terracotta {
+  background: var(--accent-terracotta) !important;
+  color: #fff !important;
+}
+.product-badge-corner.bg-sage {
+  background: var(--accent-sage) !important;
+  color: #fff !important;
+}
+.product-quickview-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  color: #2c2c2c;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 3;
+}
+.product-quickview-btn:hover {
+  background: var(--accent-terracotta);
+  color: #fff;
+}
+.product-card-modern:hover .product-quickview-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.swatches-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+}
+.swatch-dot:hover, .swatch-dot.active {
+  transform: scale(1.25);
+  border-color: var(--accent-terracotta);
+}
+.swatch-oak { background-color: #D6BA96; }
+.swatch-white { background-color: #F8F9FA; }
+.swatch-walnut { background-color: #5C4033; }
+.swatch-boucle { background-color: #ECE5DE; }
+.swatch-sage { background-color: #A0AC9B; }
+.swatch-brass { background-color: #C5A059; }
+
+.product-price-current {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+.product-price-old {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+.product-installment-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 2px;
+}
+.category-filter-pill {
+  padding: 8px 18px;
+  border-radius: 40px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+}
+.category-filter-pill:hover,
+.category-filter-pill.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary) !important;
+  border-color: var(--text-primary);
+}
+.category-pill-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 2px 12px;
+  scrollbar-width: none;
+}
+.category-pill-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================================
+   Suite Bundle Breakdown & Room Package Components
+   ======================================================== */
+.suite-bundle-box {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+.suite-item-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+.suite-item-row:last-child {
+  border-bottom: none;
+}
+.suite-thumb {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--border-radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
+#quickViewModal .modal-content {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+#quickViewModal .qv-img-container {
+  background-color: var(--bg-secondary);
+}
+
+/* ========================================================
+   Editorial Nursery Spaces & Room Stories (Home 2 Exclusives)
+   ======================================================== */
+.room-story-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.room-story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-terracotta);
+}
+.room-story-img-box {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+.room-story-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.room-story-card:hover .room-story-img-box img {
+  transform: scale(1.06);
+}
+.room-story-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  color: #2c2c2c;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+[dir="rtl"] .room-story-badge {
+  left: auto;
+  right: 14px;
+}
+
+/* 4-Stage Grow-With-Baby Progression */
+.grow-stage-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 28px 24px;
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.grow-stage-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-sage);
+  box-shadow: var(--shadow-sm);
+}
+.grow-stage-num {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-terracotta);
+  line-height: 1;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+.grow-stage-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-sage);
+  margin-bottom: 12px;
+}
+
+/* Swatch Box & Design Atelier Banner */
+.swatch-box-banner {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Press & Editorial Accolades */
+.press-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+.press-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-terracotta);
+}
+.press-publication-tag {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+

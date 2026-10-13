@@ -4,151 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nestora Baby Living - Premium Nursery Furniture Products">
-    <title>Nestora Baby Living | Nursery Products</title>
+    <meta name="description" content="Nestora Baby Living - Premium Nursery Furniture, Cribs, Gliders, Storage, and Custom Archival Keepsake Frames.">
+    <title>Nestora Baby Living | Nursery Furniture Collections & Custom Frames</title>
 
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .page-hero {
-            background-color: var(--bg-secondary);
-            padding: 120px 0 80px;
-            text-align: center;
-        }
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <style>
         .category-pill-scroll {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            padding: 20px 15px;
+            gap: 12px;
+            padding: 20px 0;
             justify-content: center;
         }
 
-        .category-pill-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .category-pill {
+        .category-filter-pill {
             background: var(--bg-tertiary);
             border: 1px solid var(--border-color);
-            padding: 15px 30px;
+            padding: 12px 24px;
             border-radius: 50px;
             font-weight: 500;
+            font-size: 0.9rem;
             color: var(--text-primary);
             transition: all 0.3s ease;
             white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .category-pill:hover,
-        .category-pill.active {
+        .category-filter-pill:hover,
+        .category-filter-pill.active {
             background: var(--text-primary);
             color: var(--bg-primary);
+            border-color: var(--text-primary);
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+        .product-card-modern {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .product-card {
-            background: transparent;
-            transition: transform 0.3s ease;
+        .product-card-modern:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-sage);
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card-img-wrapper {
+        .product-img-box {
             position: relative;
             overflow: hidden;
-            border-radius: var(--border-radius-md);
-            margin-bottom: 20px;
+            aspect-ratio: 4/3;
             background-color: var(--bg-secondary);
-            aspect-ratio: 3/4;
         }
 
-        .product-card-img-wrapper img {
+        .product-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s ease;
+            transition: transform 0.6s ease;
+            border-radius: 0;
         }
 
-        .product-card:hover .product-card-img-wrapper img {
-            transform: scale(1.08);
+        .product-card-modern:hover .product-img-box img {
+            transform: scale(1.06);
         }
 
-        .product-card-badge {
+        .product-badge-corner {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--accent-sage);
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            z-index: 2;
-        }
-
-        [dir="rtl"] .product-card-badge {
-            left: auto;
-            right: 15px;
-        }
-
-        .product-action {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            opacity: 0;
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            z-index: 2;
-            border: 1px solid var(--border-color);
-        }
-
-        .product-card:hover .product-action {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        .product-action:hover {
+            top: 14px;
+            left: 14px;
             background: var(--text-primary);
             color: var(--bg-primary);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
         }
 
-        @media (max-width: 991px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .product-action {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
+        [dir="rtl"] .product-badge-corner {
+            left: auto;
+            right: 14px;
         }
 
-        @media (max-width: 575px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
+        .section-nav-anchor {
+            scroll-margin-top: 100px;
         }
     </style>
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- Header (Consistent across all pages) -->
     <header class="navbar-custom">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="index.html" class="navbar-brand">
@@ -158,24 +121,29 @@
                 </svg>
                 Nestora
             </a>
+
             <nav class="d-none d-lg-flex align-items-center">
                 <a href="index.html" class="nav-link">Home 1</a>
                 <a href="home-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <a href="products.html" class="nav-link active">Products</a>
                 <a href="registry-services.html" class="nav-link">Registry</a>
                 <a href="assembly-delivery.html" class="nav-link">Delivery</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
+
             <div class="nav-controls d-flex align-items-center">
-                <div class="d-none d-lg-flex align-items-center">
+                <div class="d-none d-lg-flex align-items-center gap-2">
                     <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
-                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-moon"></i>
                     </button>
                     <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
                         <i class="bi bi-arrow-left-right"></i>
                     </button>
-                    <a href="signup.html" class="btn-primary-custom ms-2"
-                        style="padding: 8px 16px; font-size: 0.9rem;">Sign Up</a>
+                    <a href="#quoteModal" data-bs-toggle="modal" class="btn-cta-quote btn-nav-cta">
+                        <i class="bi bi-calculator"></i> Get a Quote
+                    </a>
+                    <a href="signup.html" class="btn-primary-custom" style="padding: 8px 16px; font-size: 0.85rem;">Sign Up</a>
                 </div>
                 <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#mobileMenu">
@@ -183,6 +151,7 @@
                 </button>
             </div>
         </div>
+
         <!-- Mobile Menu -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel"
             style="background-color: var(--bg-primary);">
@@ -190,7 +159,7 @@
                 <h5 class="offcanvas-title font-heading d-flex align-items-center" id="mobileMenuLabel"
                     style="color: var(--text-primary); font-weight: 700;">
                     <svg class="brand-logo-icon me-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                        style="width: 24px; height: 24px; color: var(--primary-color);">
+                        style="width: 24px; height: 24px;">
                         <path fill="currentColor"
                             d="M12 2a6 6 0 0 0-6 6v2H4v2h2v4a3 3 0 0 0-1 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8A3.01 3.01 0 0 0 11 16h2a3.01 3.01 0 0 0 2 2.2V19a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.8a3 3 0 0 0-1-2.2v-4h2v-2h-2V8a6 6 0 0 0-6-6zm-4 8a4 4 0 0 1 8 0v2H8v-2zm-1 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                     </svg>
@@ -202,6 +171,7 @@
                 <nav class="d-flex flex-column gap-3">
                     <a href="index.html" class="nav-link">Home 1</a>
                     <a href="home-2.html" class="nav-link">Home 2</a>
+                    <a href="about.html" class="nav-link">About Us</a>
                     <a href="products.html" class="nav-link active">Products</a>
                     <a href="registry-services.html" class="nav-link">Registry</a>
                     <a href="assembly-delivery.html" class="nav-link">Delivery</a>
@@ -209,177 +179,528 @@
                     <hr class="my-2 border-secondary" style="opacity: 0.2;">
                     <div class="d-flex gap-3 align-items-center justify-content-center">
                         <button class="icon-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
-                            <i class="bi bi-moon-stars"></i>
+                            <i class="bi bi-moon"></i>
                         </button>
                         <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
-                    <a href="signup.html" class="btn-primary-custom text-center w-100 mt-2" style="padding: 10px;">Sign
-                        Up</a>
+                    <a href="#quoteModal" data-bs-toggle="modal" class="btn-cta-quote text-center w-100 mt-2 justify-content-center">
+                        <i class="bi bi-calculator"></i> Get a Quote
+                    </a>
+                    <a href="signup.html" class="btn-primary-custom text-center w-100 mt-2" style="padding: 10px;">Sign Up</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Section 1 - Products Hero -->
-        <section class="page-hero text-center d-flex align-items-center"
-            style="min-height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/4964273/pexels-photo-4964273.jpeg') center/cover no-repeat;">
-            <div class="container animate-fade-up">
-                <h1 class="display-4 font-heading mb-4 text-white">Furniture Made for Their First Little World.</h1>
-                <p class="lead mx-auto text-white" style="max-width: 600px; opacity: 0.9;">Explore our thoughtfully
-                    crafted collection of premium nursery furniture, designed to grow with your family.</p>
-            </div>
-        </section>
-
-        <!-- Section 2 - Shop by Category -->
-        <section class="py-4 border-bottom border-color">
-            <div class="container animate-fade-in">
-                <div class="category-pill-scroll">
-                    <a href="#" class="category-pill active">All Collections</a>
-                    <a href="#" class="category-pill">Cribs</a>
-                    <a href="#" class="category-pill">Gliders</a>
-                    <a href="#" class="category-pill">Storage</a>
-                    <a href="#" class="category-pill">Changing Tables</a>
-                    <a href="#" class="category-pill">Nursery Sets</a>
+        <!-- Standardized Page Hero (Consistent Height matching about.html) -->
+        <section class="page-hero text-center"
+            style="background: linear-gradient(rgba(26,24,30,0.55), rgba(26,24,30,0.55)), url('https://images.pexels.com/photos/4964273/pexels-photo-4964273.jpeg') center/cover no-repeat;">
+            <div class="container text-white animate-fade-up">
+                <span class="badge px-3 py-2 rounded-pill mb-3" style="background: rgba(180, 166, 199, 0.3); backdrop-filter: blur(8px); border: 1px solid var(--accent-sage); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;">
+                    Curated Nursery Catalogue
+                </span>
+                <h1 class="display-4 font-heading text-white mb-3">Pure Materials. Timeless Comfort.</h1>
+                <p class="lead mx-auto text-white opacity-90 mb-4" style="max-width: 680px;">
+                    Explore our thoughtfully engineered convertible cribs, nursing gliders, soft-close storage dressers, and custom archival keepsake frames — designed to protect and celebrate your baby's journey.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#shopCategories" class="btn-primary-custom" style="background-color: var(--accent-terracotta); border-color: var(--accent-terracotta); color: #fff; padding: 12px 28px;">
+                        <i class="bi bi-funnel"></i> Browse By Category
+                    </a>
+                    <a href="#featuredProducts" class="btn-secondary-custom" style="border-color: rgba(255,255,255,0.8); color: #fff; background: rgba(255,255,255,0.18); backdrop-filter: blur(4px); padding: 12px 28px;">
+                        <i class="bi bi-award"></i> View Best Sellers
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3 - Featured Products -->
+        <!-- Section 1: Shop by Category (Interactive Filter Pills) -->
+        <section class="py-4 border-bottom border-color bg-tertiary-custom section-nav-anchor" id="shopCategories">
+            <div class="container animate-fade-in">
+                <div class="text-center mb-2">
+                    <span class="text-uppercase small fw-bold text-secondary letter-spacing-1">Filter By Category</span>
+                </div>
+                <div class="category-pill-scroll">
+                    <a href="#" class="category-filter-pill active" data-filter="all">All Nursery Collections</a>
+                    <a href="#" class="category-filter-pill" data-filter="cribs">Cribs & Sleep</a>
+                    <a href="#" class="category-filter-pill" data-filter="gliders">Gliders & Rockers</a>
+                    <a href="#" class="category-filter-pill" data-filter="storage">Dressers & Storage</a>
+                    <a href="#" class="category-filter-pill" data-filter="changing">Changing Tables</a>
+                    <a href="#" class="category-filter-pill" data-filter="artwork">Nursery Art & Keepsake Frames</a>
+                    <a href="#" class="category-filter-pill" data-filter="sets">Curated Nursery Suites</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Products -->
+        <section class="padding-y" id="featuredProducts">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5 animate-fade-up">
+                    <div>
+                        <span class="artwork-badge">Signature Selection</span>
+                        <h2 class="mb-1">Featured Products</h2>
+                        <p class="text-secondary mb-0">Our most celebrated heirloom designs, trusted by over 15,000 nurseries.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Featured 1: Crib -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="cribs">
+                        <div class="product-card-modern animate-fade-up delay-100">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-terracotta);">Flagship</span>
+                                    <img src="images/category_cribs.jpg" alt="The Aspen 4-in-1 Convertible Crib">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Cribs & Sleep</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (4.9)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">The Aspen 4-in-1 Convertible Crib</h3>
+                                    <p class="small text-secondary mb-3">Solid Appalachian oak with food-grade beeswax seal. Converts from infant crib to toddler bed, daybed, and full bed.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">GREENGUARD Gold</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Solid Oak</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <span class="h5 mb-0 fw-bold">$699.00</span>
+                                    <a href="contact.html" class="btn-cta-shop" style="padding: 6px 16px; font-size: 0.8rem;"><i class="bi bi-cart-plus"></i> Order Crib</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured 2: Glider -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="gliders">
+                        <div class="product-card-modern animate-fade-up delay-200">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner">Parent Favorite</span>
+                                    <img src="https://images.pexels.com/photos/5217124/pexels-photo-5217124.jpeg" alt="Cloud Bouclé Swivel Glider">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Gliders & Rockers</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (5.0)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">Cloud Bouclé 360° Swivel Glider</h3>
+                                    <p class="small text-secondary mb-3">Ergonomic lumbar support with whisper-quiet 360-degree swivel and smooth gliding. Stain-resistant bouclé upholstery.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">Oeko-Tex Fabric</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Whisper Glide</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <span class="h5 mb-0 fw-bold">$749.00</span>
+                                    <a href="contact.html" class="btn-cta-shop" style="padding: 6px 16px; font-size: 0.8rem;"><i class="bi bi-cart-plus"></i> Order Glider</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured 3: Custom Nursery Artwork & Keepsake Frame -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="artwork">
+                        <div class="product-card-modern animate-fade-up delay-300">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-sage); color: #fff;">Custom Keepsake</span>
+                                    <img src="images/nursery_framed_art.jpg" alt="Botanical Birth Announcement Archival Frame">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Nursery Art & Keepsakes</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (5.0)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">Archival Botanical Birth Frame</h3>
+                                    <p class="small text-secondary mb-3">Solid hardwood frame with 99% UV-protective museum acrylic, acid-free cotton mat, and personalized engraved baby nameplate.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">Museum Glass</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Engraved Brass</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <span class="h5 mb-0 fw-bold">$199.00</span>
+                                    <div class="d-flex gap-2">
+                                        <a href="#frameCustomizerModal" data-bs-toggle="modal" class="btn-cta-customize" style="padding: 6px 14px; font-size: 0.78rem;">
+                                            <i class="bi bi-palette"></i> Customize Frame
+                                        </a>
+                                        <a href="contact.html" class="btn-cta-shop" style="padding: 6px 14px; font-size: 0.78rem;">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: New Arrivals (2026 Releases) -->
+        <section class="padding-y bg-secondary-custom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5 animate-fade-up">
+                    <div>
+                        <span class="artwork-badge">Fresh For 2026</span>
+                        <h2 class="mb-1">New Arrivals</h2>
+                        <p class="text-secondary mb-0">Discover our latest architectural silhouettes and nursery art innovations.</p>
+                    </div>
+                    <a href="#frameCustomizerModal" data-bs-toggle="modal" class="btn-cta-customize d-none d-md-inline-flex">
+                        <i class="bi bi-palette"></i> Customize Frame
+                    </a>
+                </div>
+
+                <div class="row g-4">
+                    <!-- New Arrival 1 -->
+                    <div class="col-lg-3 col-md-6 filterable-product" data-category="cribs">
+                        <div class="product-card-modern animate-fade-up delay-100">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-terracotta);">New</span>
+                                    <img src="https://assets.pkimgs.com/pkimgs/rk/images/dp/wcm/202617/0010/sloan-acrylic-convertible-crib-1-c.jpg" alt="Scandinavian Cloud Acrylic Crib">
+                                </div>
+                                <div class="p-3">
+                                    <span class="small text-secondary text-uppercase d-block mb-1">Cribs</span>
+                                    <h4 class="h6 mb-2 font-heading">Scandinavian Cloud Acrylic Crib</h4>
+                                    <p class="small text-secondary mb-2">Shatterproof clear acrylic slats with natural beechwood base for 360° visibility.</p>
+                                    <strong class="text-primary">$1,199.00</strong>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="contact.html" class="btn-cta-shop w-100 text-center justify-content-center" style="font-size: 0.78rem;">Explore Crib Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Arrival 2 -->
+                    <div class="col-lg-3 col-md-6 filterable-product" data-category="artwork">
+                        <div class="product-card-modern animate-fade-up delay-200">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-sage); color:#fff;">New</span>
+                                    <img src="images/framed_keepsakes_bunny.jpg" alt="Heirloom Milestone Memory Shadowbox">
+                                </div>
+                                <div class="p-3">
+                                    <span class="small text-secondary text-uppercase d-block mb-1">Custom Frames</span>
+                                    <h4 class="h6 mb-2 font-heading">Heirloom Milestone Shadowbox</h4>
+                                    <p class="small text-secondary mb-2">Deep-profile frame designed to preserve baby booties, ultrasound, and engraved plaque.</p>
+                                    <strong class="text-primary">$229.00</strong>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="#frameCustomizerModal" data-bs-toggle="modal" class="btn-cta-customize w-100 text-center justify-content-center" style="font-size: 0.78rem;">
+                                    <i class="bi bi-palette"></i> Customize Shadowbox
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Arrival 3 -->
+                    <div class="col-lg-3 col-md-6 filterable-product" data-category="storage">
+                        <div class="product-card-modern animate-fade-up delay-300">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-terracotta);">New</span>
+                                    <img src="https://images.pexels.com/photos/7220466/pexels-photo-7220466.jpeg" alt="Petite Nursery Highboy Dresser">
+                                </div>
+                                <div class="p-3">
+                                    <span class="small text-secondary text-uppercase d-block mb-1">Dressers</span>
+                                    <h4 class="h6 mb-2 font-heading">Petite 5-Drawer Highboy</h4>
+                                    <p class="small text-secondary mb-2">Space-conscious vertical storage with anti-tip locks and German soft-close runners.</p>
+                                    <strong class="text-primary">$799.00</strong>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="contact.html" class="btn-cta-shop w-100 text-center justify-content-center" style="font-size: 0.78rem;">Explore Dresser Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Arrival 4 -->
+                    <div class="col-lg-3 col-md-6 filterable-product" data-category="cribs">
+                        <div class="product-card-modern animate-fade-up delay-400">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-terracotta);">New</span>
+                                    <img src="https://m.media-amazon.com/images/I/61SC5r0FkSL._AC_UF894,1000_QL80_.jpg" alt="Artisan Handwoven Rattan Bassinet">
+                                </div>
+                                <div class="p-3">
+                                    <span class="small text-secondary text-uppercase d-block mb-1">Bassinets</span>
+                                    <h4 class="h6 mb-2 font-heading">Organic Rattan Moses Bassinet</h4>
+                                    <p class="small text-secondary mb-2">Lightweight natural rattan with organic cotton mattress and solid beech stand.</p>
+                                    <strong class="text-primary">$399.00</strong>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="contact.html" class="btn-cta-shop w-100 text-center justify-content-center" style="font-size: 0.78rem;">Explore Bassinet Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Best Sellers -->
         <section class="padding-y">
             <div class="container">
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card animate-fade-up delay-100">
-                        <div class="product-card-img-wrapper">
-                            <span class="product-card-badge">Bestseller</span>
-                            <img src="https://images.pexels.com/photos/37185821/pexels-photo-37185821.jpeg"
-                                alt="Classic Convertible Crib">
-                            <a href="#" class="product-action">View Details</a>
+                <div class="text-center max-w-700 mx-auto mb-5 animate-fade-up">
+                    <span class="artwork-badge">Parent Approved</span>
+                    <h2>Best Sellers: Top Nursery Essentials</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px;">
+                        The foundational furniture and archival pieces consistently chosen by expectant parents and interior designers.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Best Seller 1 -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="storage">
+                        <div class="product-card-modern animate-fade-up delay-100">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner">#1 Best Seller</span>
+                                    <img src="https://images.pexels.com/photos/6903252/pexels-photo-6903252.jpeg" alt="Aspen 6-Drawer Dresser">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Storage</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (4.9)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">Aspen 6-Drawer Wide Dresser</h3>
+                                    <p class="small text-secondary mb-3">Spacious depth with English dovetail joinery. Compatible with our Universal Changing Topper for seamless infant changes.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">Anti-Tip Certified</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Dovetail Joints</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <span class="h5 mb-0 fw-bold">$849.00</span>
+                                    <a href="contact.html" class="btn-cta-shop" style="padding: 6px 16px; font-size: 0.8rem;"><i class="bi bi-cart-plus"></i> Order Dresser</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="h5 mb-1">Classic Convertible Crib</h3>
-                        <p class="text-secondary small mb-2">Converts from crib to toddler bed.</p>
-                        <p class="fw-bold m-0">$699.00</p>
                     </div>
 
-                    <!-- Product 2 -->
-                    <div class="product-card animate-fade-up delay-200">
-                        <div class="product-card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/6903252/pexels-photo-6903252.jpeg"
-                                alt="6-Drawer Dresser">
-                            <a href="#" class="product-action">View Details</a>
+                    <!-- Best Seller 2 -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="changing">
+                        <div class="product-card-modern animate-fade-up delay-200">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner">Essential</span>
+                                    <img src="https://images.pexels.com/photos/6849347/pexels-photo-6849347.jpeg" alt="Universal Changing Table Topper">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Changing Tables</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (4.8)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">Universal Changing Topper</h3>
+                                    <p class="small text-secondary mb-3">Converts any 6-drawer dresser into an ergonomic changing station. Felt-lined underside protects dresser surface from scratches.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">Felt Padded</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Safety Strap Included</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <span class="h5 mb-0 fw-bold">$149.00</span>
+                                    <a href="contact.html" class="btn-cta-shop" style="padding: 6px 16px; font-size: 0.8rem;"><i class="bi bi-cart-plus"></i> Order Topper</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="h5 mb-1">6-Drawer Dresser</h3>
-                        <p class="text-secondary small mb-2">Spacious storage with soft-close drawers.</p>
-                        <p class="fw-bold m-0">$849.00</p>
                     </div>
 
-                    <!-- Product 3 -->
-                    <div class="product-card animate-fade-up delay-300">
-                        <div class="product-card-img-wrapper">
-                            <span class="product-card-badge"
-                                style="background-color: var(--accent-terracotta);">New</span>
-                            <img src="https://images.pexels.com/photos/6835142/pexels-photo-6835142.jpeg"
-                                alt="Bouclé Nursery Glider">
-                            <a href="#" class="product-action">View Details</a>
+                    <!-- Best Seller 3 -->
+                    <div class="col-lg-4 col-md-6 filterable-product" data-category="sets">
+                        <div class="product-card-modern animate-fade-up delay-300">
+                            <div>
+                                <div class="product-img-box">
+                                    <span class="product-badge-corner" style="background-color: var(--accent-terracotta);">Save $350</span>
+                                    <img src="images/heritage_collection.jpg" alt="The Complete Oslo Nursery Suite">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="small text-secondary text-uppercase">Nursery Suites</span>
+                                        <div class="stars-group mb-0 small">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (5.0)
+                                        </div>
+                                    </div>
+                                    <h3 class="h5 mb-2 font-heading">The Complete Oslo Nursery Suite</h3>
+                                    <p class="small text-secondary mb-3">Full matching trio: 4-in-1 Convertible Crib, 6-Drawer Dresser, and Bouclé Glider. Includes complimentary White-Glove delivery.</p>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <span class="badge bg-secondary-custom text-primary border-color">Complete Bundle</span>
+                                        <span class="badge bg-secondary-custom text-primary border-color">Free In-Room Setup</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 pt-0">
+                                <div class="d-flex justify-content-between align-items-center pt-3 border-top border-color">
+                                    <div>
+                                        <span class="h5 mb-0 fw-bold">$2,147.00</span>
+                                        <span class="small text-muted text-decoration-line-through ms-2">$2,497</span>
+                                    </div>
+                                    <a href="contact.html" class="btn-cta-shop" style="padding: 6px 16px; font-size: 0.8rem;"><i class="bi bi-box-seam"></i> Order Full Suite</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="h5 mb-1">Bouclé Nursery Glider</h3>
-                        <p class="text-secondary small mb-2">Ultra-soft fabric with smooth glide motion.</p>
-                        <p class="fw-bold m-0">$929.00</p>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="product-card animate-fade-up delay-100">
-                        <div class="product-card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/6849347/pexels-photo-6849347.jpeg"
-                                alt="Changing Topper">
-                            <a href="#" class="product-action">View Details</a>
-                        </div>
-                        <h3 class="h5 mb-1">Universal Changing Topper</h3>
-                        <p class="text-secondary small mb-2">Fits securely on our 6-drawer dressers.</p>
-                        <p class="fw-bold m-0">$149.00</p>
-                    </div>
-
-                    <!-- Product 5 -->
-                    <div class="product-card animate-fade-up delay-200">
-                        <div class="product-card-img-wrapper">
-                            <img src="https://assets.pkimgs.com/pkimgs/rk/images/dp/wcm/202617/0010/sloan-acrylic-convertible-crib-1-c.jpg"
-                                alt="Modern Acrylic Crib">
-                            <a href="#" class="product-action">View Details</a>
-                        </div>
-                        <h3 class="h5 mb-1">Modern Acrylic Crib</h3>
-                        <p class="text-secondary small mb-2">Clear acrylic slats for a 360° view.</p>
-                        <p class="fw-bold m-0">$1,199.00</p>
-                    </div>
-
-                    <!-- Product 6 -->
-                    <div class="product-card animate-fade-up delay-300">
-                        <div class="product-card-img-wrapper">
-                            <img src="https://m.media-amazon.com/images/I/61SC5r0FkSL._AC_UF894,1000_QL80_.jpg"
-                                alt="Rattan Bassinet">
-                            <a href="#" class="product-action">View Details</a>
-                        </div>
-                        <h3 class="h5 mb-1">Rattan Bassinet</h3>
-                        <p class="text-secondary small mb-2">Lightweight and beautifully hand-woven.</p>
-                        <p class="fw-bold m-0">$399.00</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4 - Craftsmanship & Materials -->
-        <section class="padding-y bg-secondary-custom overflow-hidden">
+        <!-- Section 5: Materials & Finishes (Comprehensive Educational Section) -->
+        <section class="padding-y bg-secondary-custom">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0 animate-slide-right">
-                        <div class="position-relative">
-                            <img src="https://hips.hearstapps.com/hmg-prod/images/38225b14-d38b-4a53-b4f7-8704cc099bcc.jpg?crop=1.00xw:0.669xh;0,0.120xh&resize=640:*"
-                                alt="Craftsmanship" class="w-100 rounded-circle"
-                                style="aspect-ratio: 1/1; object-fit: cover;">
-                            <div class="position-absolute top-0 end-0 bg-tertiary-custom p-4 rounded-circle shadow-lg d-flex align-items-center justify-content-center"
-                                style="width: 140px; height: 140px; transform: translate(20%, -20%);">
-                                <span class="text-center fw-bold font-heading fs-5"
-                                    style="line-height: 1.2;">100%<br>Safe</span>
-                            </div>
+                <div class="row align-items-center mb-5 animate-fade-up">
+                    <div class="col-lg-8">
+                        <span class="artwork-badge">Master Materials</span>
+                        <h2>Materials & Finishes: Purity You Can Touch</h2>
+                        <p class="text-secondary mb-0">Every timber, fabric, acrylic pane, and oil is selected for sustainability, durability, and absolute infant safety.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="about.html" class="btn-secondary-custom">Learn Our Craftsmanship</a>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-100">
+                        <div class="material-card">
+                            <img src="images/custom_finish_swatches.jpg" alt="Kiln-Dried Appalachian Hardwoods" class="material-sample-img">
+                            <h4 class="h5 mb-2 font-heading">Kiln-Dried Appalachian Hardwoods</h4>
+                            <p class="small text-secondary mb-0">Harvested from certified sustainable American forests. Kiln-dried to 6-8% moisture content to prevent warping, cracking, or joint loosening across decades.</p>
                         </div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1 animate-slide-left">
-                        <h2 class="mb-4">The Nestora Standard</h2>
-                        <p class="mb-5">We believe that beautiful design should never compromise on safety or
-                            durability.</p>
 
-                        <div class="d-flex mb-4">
-                            <div class="me-3 mt-1">
-                                <i class="bi bi-shield-check text-sage fs-3"></i>
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-200">
+                        <div class="material-card">
+                            <img src="https://images.pexels.com/photos/5217124/pexels-photo-5217124.jpeg" alt="Oeko-Tex Bouclé and Organic Linen" class="material-sample-img">
+                            <h4 class="h5 mb-2 font-heading">Stain-Resistant Performance Bouclé</h4>
+                            <p class="small text-secondary mb-0">OEKO-TEX Standard 100 certified. Free of fluorochemicals, PFAS, and chemical fire retardants. Liquid spills bead on the surface for effortless spot cleaning.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-300">
+                        <div class="material-card">
+                            <img src="images/gallery_botanical_frames.jpg" alt="Archival 99% UV-Shield Museum Acrylic" class="material-sample-img">
+                            <h4 class="h5 mb-2 font-heading">99% UV Museum-Grade Acrylic</h4>
+                            <p class="small text-secondary mb-0">Lightweight and shatterproof for nursery safety. Blocks 99% of damaging UV rays to prevent baby footprints, ultrasound photos, and milestone art from yellowing or fading.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-100">
+                        <div class="material-card">
+                            <div class="p-3 bg-secondary-custom rounded mb-3 text-center">
+                                <i class="bi bi-droplet-half text-terracotta fs-1"></i>
                             </div>
-                            <div>
-                                <h4 class="h5">GREENGUARD Gold Certified</h4>
-                                <p class="text-secondary small">Tested for over 10,000 chemicals to ensure safe indoor
-                                    air quality.</p>
+                            <h4 class="h5 mb-2 font-heading">Zero-VOC Organic Beeswax & Stains</h4>
+                            <p class="small text-secondary mb-0">Water-borne, non-toxic stains buffed with organic plant oils and pharmaceutical-grade beeswax. Emits 0.00% VOCs into the nursery nursery atmosphere.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-200">
+                        <div class="material-card">
+                            <div class="p-3 bg-secondary-custom rounded mb-3 text-center">
+                                <i class="bi bi-gear text-sage fs-1"></i>
+                            </div>
+                            <h4 class="h5 mb-2 font-heading">Solid Brass & Champagne Bronze Hardware</h4>
+                            <p class="small text-secondary mb-0">Forged solid brass drawer pulls and mounting brackets with protective matte lacquering that never tarnishes or flakes into curious baby hands.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate-fade-up delay-300">
+                        <div class="material-card">
+                            <div class="p-3 bg-secondary-custom rounded mb-3 text-center">
+                                <i class="bi bi-file-earmark-medical text-terracotta fs-1"></i>
+                            </div>
+                            <h4 class="h5 mb-2 font-heading">100% Acid-Free Cotton Rag Matting</h4>
+                            <p class="small text-secondary mb-0">Pure alpha-cellulose and cotton rag mat boards buffered with calcium carbonate to actively neutralize ambient airborne acids around precious keepsakes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Safety Information (Comprehensive Safety Guide) -->
+        <section class="padding-y bg-tertiary-custom" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5 animate-slide-right">
+                        <span class="artwork-badge">Pediatric Standards</span>
+                        <h2>Uncompromising Nursery Safety Standards</h2>
+                        <p class="text-secondary mb-4">
+                            Your newborn will spend up to 16 hours a day in their nursery. We engineer every component to exceed the strictest global child safety specifications.
+                        </p>
+
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="safety-pill-badge">
+                                <i class="bi bi-shield-check"></i>
+                                <span>GREENGUARD Gold Lab Certified</span>
+                            </div>
+                            <div class="safety-pill-badge">
+                                <i class="bi bi-check2-circle"></i>
+                                <span>Exceeds ASTM F1169 & CPSC 16 CFR 1219</span>
+                            </div>
+                            <div class="safety-pill-badge">
+                                <i class="bi bi-lock"></i>
+                                <span>ASTM F2057 Anti-Tip Interlocking Mechanisms</span>
+                            </div>
+                            <div class="safety-pill-badge">
+                                <i class="bi bi-rulers"></i>
+                                <span>2-1/8" Entrapment-Safe Slat Clearance</span>
                             </div>
                         </div>
 
-                        <div class="d-flex mb-4">
-                            <div class="me-3 mt-1">
-                                <i class="bi bi-tree text-terracotta fs-3"></i>
-                            </div>
-                            <div>
-                                <h4 class="h5">Sustainably Sourced Wood</h4>
-                                <p class="text-secondary small">Crafted from sustainable New Zealand pine and TSCA
-                                    compliant materials.</p>
-                            </div>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="contact.html" class="btn-cta-shop"><i class="bi bi-shield-check"></i> Consult Safety Standards</a>
                         </div>
+                    </div>
 
-                        <div class="d-flex">
-                            <div class="me-3 mt-1">
-                                <i class="bi bi-droplet text-sage fs-3"></i>
+                    <div class="col-lg-7 animate-slide-left">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="p-4 bg-secondary-custom rounded h-100">
+                                    <h5 class="h6 fw-bold mb-2 text-primary"><i class="bi bi-wind text-sage me-2"></i>Clean Air Certification</h5>
+                                    <p class="small text-secondary mb-0">Tested annually in thermal chambers for over 10,000 chemicals. Guaranteed safe for sensitive infant lungs and allergy-prone babies.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="h5">Non-Toxic Finishes</h4>
-                                <p class="text-secondary small">Finished in a non-toxic multi-step painting process,
-                                    safe for babies.</p>
+                            <div class="col-sm-6">
+                                <div class="p-4 bg-secondary-custom rounded h-100">
+                                    <h5 class="h6 fw-bold mb-2 text-primary"><i class="bi bi-shield-x text-terracotta me-2"></i>Heavy Metals Prohibited</h5>
+                                    <p class="small text-secondary mb-0">Zero lead, phthalates, BPA, or formaldehyde. Completely chew-safe surfaces formulated for teething babies.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-4 bg-secondary-custom rounded h-100">
+                                    <h5 class="h6 fw-bold mb-2 text-primary"><i class="bi bi-shield-fill-check text-sage me-2"></i>Double Load Structural Testing</h5>
+                                    <p class="small text-secondary mb-0">Crib mattress supports and joint fasteners undergo 2x static load testing up to 250 lbs without deflection or failure.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-4 bg-secondary-custom rounded h-100">
+                                    <h5 class="h6 fw-bold mb-2 text-primary"><i class="bi bi-house-heart text-terracotta me-2"></i>Shatterproof Nursery Framing</h5>
+                                    <p class="small text-secondary mb-0">All nursery frames eliminate dangerous standard glass in favor of crystal-clear, shatter-resistant archival polymers.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,16 +708,238 @@
             </div>
         </section>
 
-        <!-- Section 5 - Explore the Collection -->
-        <section class="padding-y text-center">
+        <!-- Section 7: Final Purchase & Customization CTA Banner -->
+        <section class="padding-y text-center" style="background: radial-gradient(circle, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
             <div class="container animate-fade-up">
-                <h2 class="mb-3">Find The Perfect Piece</h2>
-                <p class="mb-5 mx-auto text-secondary" style="max-width: 500px;">Our complete collection offers
-                    something for every nursery size, style, and budget.</p>
-                <a href="#" class="btn-primary-custom px-5">View Full Collection</a>
+                <span class="artwork-badge">Ready To Design Their Space?</span>
+                <h2 class="display-5 font-heading mb-3">Begin Your Nursery Journey Today</h2>
+                <p class="text-secondary mx-auto mb-4" style="max-width: 600px;">
+                    Whether you are furnishing a full nursery suite, designing a custom framed milestone heirloom, or seeking personal design guidance, we are with you every step.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#frameCustomizerModal" data-bs-toggle="modal" class="btn-cta-customize px-4 py-3">
+                        <i class="bi bi-palette"></i> Build Custom Frame
+                    </a>
+                    <a href="contact.html" class="btn-cta-shop px-4 py-3">
+                        <i class="bi bi-chat-dots"></i> Book Nursery Concierge
+                    </a>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Modals (Customizer & Quote Request) -->
+    <!-- Frame Customizer Modal -->
+    <div class="modal fade" id="frameCustomizerModal" tabindex="-1" aria-labelledby="frameCustomizerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header">
+                    <div>
+                        <h4 class="modal-title font-heading mb-1" id="frameCustomizerModalLabel">Nursery Frame & Keepsake Studio</h4>
+                        <p class="small text-secondary mb-0">Design custom solid-wood framing for baby birth announcements, milestone prints, and heirlooms.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="frame-preview-wrapper h-100">
+                                <div class="interactive-frame" id="customFrameBorder" style="border: 14px solid #C8A575; border-radius: 4px;">
+                                    <div class="frame-inner-mat" id="customFrameMat" style="background-color: #FCFBFF; padding: 18px;">
+                                        <div class="frame-art-content shadow-sm">
+                                            <div class="mb-2">
+                                                <i class="bi bi-flower1 fs-1 text-sage"></i>
+                                            </div>
+                                            <h5 class="font-heading mb-1" id="previewNameText">Baby Name</h5>
+                                            <small class="text-secondary d-block" id="previewDateText">Est. 2026</small>
+                                            <span class="badge bg-secondary-custom text-terracotta mt-2" style="font-size: 0.7rem; border: 1px solid var(--border-color);">
+                                                99% UV-Shield Museum Glass
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-center">
+                                    <small class="text-secondary">Selected: <strong id="selectedFinishLabel">Solid Oak</strong> + <strong id="selectedMatLabel">Ivory Cream</strong> (<strong id="selectedSizeLabel">16" x 20"</strong>)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">1. Choose Wood Moulding</label>
+                                <div class="swatch-group">
+                                    <button type="button" class="swatch-btn finish-swatch-btn active" data-border-color="#C8A575" data-finish-name="Appalachian Natural Oak" style="background-color: #C8A575;" title="Natural Oak"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#5C4033" data-finish-name="Warm American Walnut" style="background-color: #5C4033;" title="American Walnut"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#EAE6DF" data-finish-name="Cloud White Satin" style="background-color: #EAE6DF;" title="Cloud White"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#8C847E" data-finish-name="Driftwood Grey" style="background-color: #8C847E;" title="Driftwood Grey"></button>
+                                    <button type="button" class="swatch-btn finish-swatch-btn" data-border-color="#C5A059" data-finish-name="Brushed Champagne Brass" style="background-color: #C5A059;" title="Champagne Brass"></button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">2. Select Museum Mat Color</label>
+                                <div class="swatch-group">
+                                    <button type="button" class="swatch-btn mat-swatch-btn active" data-mat-color="#FCFBFF" data-mat-name="Ivory Cream" style="background-color: #FCFBFF; border: 1px solid #ccc;" title="Ivory Cream"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#D8E2DC" data-mat-name="Sage Mist" style="background-color: #D8E2DC;" title="Sage Mist"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#ECE4DB" data-mat-name="Warm Oatmeal Linen" style="background-color: #ECE4DB;" title="Warm Oatmeal"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#F1E3E4" data-mat-name="Powder Blush" style="background-color: #F1E3E4;" title="Powder Blush"></button>
+                                    <button type="button" class="swatch-btn mat-swatch-btn" data-mat-color="#E2E2EA" data-mat-name="Soft Lavender Grey" style="background-color: #E2E2EA;" title="Soft Lavender Grey"></button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">3. Frame Dimensions</label>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="149" data-size-label="11&quot; x 14&quot;">11" x 14" ($149)</button>
+                                    <button type="button" class="swatch-pill size-select-pill active" data-price="199" data-size-label="16&quot; x 20&quot;">16" x 20" ($199)</button>
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="249" data-size-label="18&quot; x 24&quot;">18" x 24" ($249)</button>
+                                    <button type="button" class="swatch-pill size-select-pill" data-price="329" data-size-label="24&quot; x 36&quot;">24" x 36" ($329)</button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">4. Personalized Nameplate Engraving</label>
+                                <input type="text" class="custom-form-control mb-2" id="customNameplateName" placeholder="Baby Name (e.g., Charlotte Eliza)" maxlength="32">
+                                <input type="text" class="custom-form-control" id="customNameplateDate" placeholder="Date & Details (e.g., Born: 10.14.2026 | 7 lbs 4 oz)" maxlength="48">
+                            </div>
+
+                            <div class="quote-summary-box d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <small class="text-secondary d-block">Estimated Investment</small>
+                                    <h4 class="font-heading mb-0 text-terracotta" id="customFramePrice">$234</h4>
+                                </div>
+                                <button type="button" class="btn-primary-custom" id="btnSaveCustomFrame">Save & Add To Order</button>
+                            </div>
+
+                            <div id="customFrameSuccessAlert" class="alert alert-success d-none py-2 small mb-0">
+                                <i class="bi bi-check-circle-fill me-1"></i> Custom frame specifications saved to your nursery bag!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get a Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header">
+                    <div>
+                        <h4 class="modal-title font-heading mb-1" id="quoteModalLabel">Nursery Furniture & Framing Quote</h4>
+                        <p class="small text-secondary mb-0">Select your preferred pieces to instantly calculate costs and receive an itemized proposal.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="nurseryQuoteForm">
+                        <div class="row g-4">
+                            <div class="col-md-7">
+                                <h5 class="h6 text-uppercase fw-bold mb-3 text-secondary">1. Select Nursery Items</h5>
+                                <div class="list-group mb-3">
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="699" checked>
+                                            <strong>Aspen Convertible 4-in-1 Crib</strong>
+                                            <small class="d-block text-secondary">GREENGUARD Gold certified Appalachian Oak</small>
+                                        </div>
+                                        <span class="fw-bold">$699</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="749" checked>
+                                            <strong>Cloud Bouclé Nursery Glider</strong>
+                                            <small class="d-block text-secondary">360° whisper glide with stain-resistant fabric</small>
+                                        </div>
+                                        <span class="fw-bold">$749</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="849" checked>
+                                            <strong>6-Drawer Soft-Close Dresser</strong>
+                                            <small class="d-block text-secondary">English dovetail solid wood joinery</small>
+                                        </div>
+                                        <span class="fw-bold">$849</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="149">
+                                            <strong>Universal Changing Table Topper</strong>
+                                            <small class="d-block text-secondary">Attaches securely with anti-scratch felt</small>
+                                        </div>
+                                        <span class="fw-bold">$149</span>
+                                    </label>
+
+                                    <label class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-color py-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input quote-item-check me-2" type="checkbox" data-price="199" checked>
+                                            <strong>Archival Keepsake Art & Memory Frame</strong>
+                                            <small class="d-block text-secondary">99% UV museum glass & engraved nameplate</small>
+                                        </div>
+                                        <span class="fw-bold">$199</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-check p-3 bg-secondary-custom rounded mb-3">
+                                    <input class="form-check-input" type="checkbox" id="quoteAssemblyCheck" checked>
+                                    <label class="form-check-label fw-bold" for="quoteAssemblyCheck">
+                                        Include White-Glove In-Room Assembly & Packaging Removal
+                                    </label>
+                                    <small class="d-block text-secondary" id="quoteAssemblyNote">Complimentary on orders $1,500+</small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="quote-summary-box mb-4">
+                                    <h5 class="font-heading mb-3">Cost Breakdown</h5>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-secondary">Subtotal:</span>
+                                        <strong id="quoteSubtotalDisplay">$2,496</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2 text-success">
+                                        <span>Nursery Bundle Discount (15%):</span>
+                                        <strong id="quoteDiscountDisplay">-$374</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3 text-secondary">
+                                        <span>White-Glove Delivery:</span>
+                                        <span class="text-success fw-bold">FREE</span>
+                                    </div>
+                                    <hr class="border-color">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 mb-0">Total Estimated:</span>
+                                        <h4 class="font-heading text-terracotta mb-0" id="quoteTotalDisplay">$2,122</h4>
+                                    </div>
+                                </div>
+
+                                <h5 class="h6 text-uppercase fw-bold mb-3 text-secondary">2. Contact Details</h5>
+                                <div class="mb-2">
+                                    <input type="text" class="custom-form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="email" class="custom-form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="custom-form-control" placeholder="Phone Number">
+                                </div>
+                                <button type="submit" class="btn-primary-custom w-100 py-3">Submit Quote Request</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="quoteSuccessMessage" class="d-none text-center py-4">
+                        <i class="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
+                        <h4 class="font-heading mb-2">Quote Generated Successfully!</h4>
+                        <p class="text-secondary mb-3">Your custom nursery estimate reference is <strong id="quoteReferenceCode" class="text-primary">NST-847291</strong>. An itemized proposal has been sent to your email.</p>
+                        <a href="products.html" class="btn-primary-custom">Explore Matching Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer-custom">
@@ -410,8 +953,7 @@
                         </svg>
                         Nestora
                     </a>
-                    <p class="text-secondary mb-4">Premium nursery furniture thoughtfully designed for modern families.
-                        Creating safe, beautiful, and functional spaces for your little ones to grow.</p>
+                    <p class="text-secondary mb-4">Premium nursery furniture thoughtfully designed for modern families. Creating safe, beautiful, and functional spaces for your little ones to grow.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="social-icon-link fs-4"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="social-icon-link fs-4"><i class="bi bi-pinterest"></i></a>
@@ -422,23 +964,24 @@
                 <div class="col-lg-2 col-md-4">
                     <h4 class="footer-title">Shop</h4>
                     <a href="products.html" class="footer-link">All Products</a>
-                    <a href="#" class="footer-link">Cribs</a>
-                    <a href="#" class="footer-link">Gliders</a>
-                    <a href="#" class="footer-link">Storage</a>
-                    <a href="#" class="footer-link">Nursery Sets</a>
+                    <a href="products.html" class="footer-link">Cribs</a>
+                    <a href="products.html" class="footer-link">Gliders</a>
+                    <a href="products.html" class="footer-link">Storage & Dressers</a>
+                    <a href="#frameCustomizerModal" data-bs-toggle="modal" class="footer-link">Custom Frames</a>
+                    <a href="products.html" class="footer-link">Nursery Sets</a>
                 </div>
 
                 <div class="col-lg-2 col-md-4">
-                    <h4 class="footer-title">Services</h4>
-                    <a href="registry-services.html" class="footer-link">Registry</a>
-                    <a href="assembly-delivery.html" class="footer-link">Delivery & Assembly</a>
-                    <a href="registry-services.html" class="footer-link">Consultation</a>
-                    <a href="contact.html" class="footer-link">Support</a>
+                    <h4 class="footer-title">Company</h4>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="registry-services.html" class="footer-link">Baby Registry</a>
+                    <a href="assembly-delivery.html" class="footer-link">White-Glove Delivery</a>
+                    <a href="contact.html" class="footer-link">Contact & Support</a>
                 </div>
 
                 <div class="col-lg-4 col-md-4">
                     <h4 class="footer-title">Join Our Newsletter</h4>
-                    <p class="text-secondary mb-3">Subscribe for nursery inspiration and exclusive offers.</p>
+                    <p class="text-secondary mb-3">Subscribe for nursery styling inspiration and exclusive seasonal offers.</p>
                     <form class="d-flex gap-2">
                         <input type="email" class="custom-form-control" placeholder="Email address" required>
                         <button type="submit" class="btn-primary-custom" style="padding: 10px 20px;">Join</button>
@@ -460,6 +1003,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
