@@ -33,6 +33,25 @@
             border-radius: 0 0 100px 0;
         }
 
+        @media (min-width: 992px) {
+            .registry-hero {
+                height: calc(100vh - 81px);
+                min-height: calc(100vh - 81px);
+                display: flex;
+                align-items: center;
+            }
+
+            .registry-hero-row {
+                min-height: calc(100vh - 81px);
+                height: 100%;
+            }
+
+            .registry-hero-title {
+                font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+                line-height: 1.15;
+            }
+        }
+
         @media (max-width: 991px) {
             .registry-hero-bg {
                 position: relative;
@@ -205,15 +224,15 @@
             <img src="https://images.pexels.com/photos/7938081/pexels-photo-7938081.jpeg" alt="Nursery Registry"
                 class="registry-hero-bg d-none d-lg-block animate-fade-in delay-200">
             <div class="container position-relative">
-                <div class="row min-vh-100 align-items-center">
-                    <div class="col-lg-6 py-5 animate-slide-right">
-                        <p class="text-terracotta text-uppercase fw-bold letter-spacing-1 mb-3">Nestora Registry</p>
-                        <h1 class="display-3 mb-4 font-heading fw-bold">Create a Nursery Worth Celebrating.</h1>
-                        <p class="lead mb-5 text-secondary pe-lg-5">Curate the perfect space for your little one with
+                <div class="row registry-hero-row align-items-center">
+                    <div class="col-lg-6 py-4 py-lg-0 animate-slide-right">
+                        <p class="text-terracotta text-uppercase fw-bold letter-spacing-1 mb-2 mb-lg-3">Nestora Registry</p>
+                        <h1 class="registry-hero-title mb-3 mb-lg-4 font-heading fw-bold">Create a Nursery Worth Celebrating.</h1>
+                        <p class="lead mb-4 mb-lg-4 text-secondary pe-lg-5">Curate the perfect space for your little one with
                             our personalized registry service. Easy to share, beautiful to browse.</p>
                         <div class="d-flex gap-3 flex-wrap">
-                            <a href="#start-registry" class="btn-primary-custom text-center" style="min-width: 250px;">Start Your Registry</a>
-                            <a href="#benefits" class="btn-secondary-custom text-center" style="min-width: 250px;">Learn More</a>
+                            <a href="#start-registry" class="btn-primary-custom text-center" style="min-width: 240px;">Start Your Registry</a>
+                            <a href="#benefits" class="btn-secondary-custom text-center" style="min-width: 240px;">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -330,7 +349,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 animate-slide-right order-lg-2 mb-5 mb-lg-0">
-                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Nursery Consultation"
+                        <img src="images/nursery_consultation.jpg" alt="Personal Nursery Consultation"
                             class="w-100 shadow-md" style="border-radius: var(--border-radius-lg);">
                     </div>
                     <div class="col-lg-5 animate-slide-left order-lg-1">
