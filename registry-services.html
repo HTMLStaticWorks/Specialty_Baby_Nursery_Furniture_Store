@@ -21,28 +21,29 @@
             position: absolute;
             right: 0;
             top: 0;
-            width: 45%;
+            width: 48%;
             height: 100%;
             object-fit: cover;
-            border-radius: 0 0 0 100px;
+            object-position: center bottom;
+            border-radius: 0 0 0 32px;
         }
 
         [dir="rtl"] .registry-hero-bg {
             right: auto;
             left: 0;
-            border-radius: 0 0 100px 0;
+            border-radius: 0 0 32px 0;
         }
 
         @media (min-width: 992px) {
             .registry-hero {
-                min-height: 480px;
-                max-height: 520px;
+                min-height: 540px;
+                max-height: 600px;
                 display: flex;
                 align-items: center;
             }
 
             .registry-hero-row {
-                min-height: 480px;
+                min-height: 540px;
                 height: 100%;
             }
 
@@ -52,13 +53,26 @@
             }
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 991.98px) {
             .registry-hero-bg {
-                position: relative;
-                width: 100%;
-                height: 400px;
-                border-radius: 0;
+                display: none !important;
             }
+        }
+
+        .registry-hero .hero-cta-btn {
+            width: 240px !important;
+            min-width: 240px !important;
+            height: 48px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            white-space: nowrap !important;
+            box-sizing: border-box !important;
+            border-radius: 50px !important;
+            font-size: 0.82rem !important;
+            letter-spacing: 0.6px !important;
+            padding: 0 16px !important;
         }
 
         .timeline-step {
@@ -236,19 +250,22 @@
                         <h1 class="registry-hero-title mb-3 mb-lg-4 font-heading fw-bold">Create a Nursery Worth Celebrating.</h1>
                         <p class="lead mb-4 mb-lg-4 text-secondary pe-lg-5">Curate the perfect space for your little one with
                             our personalized registry service. Easy to share, beautiful to browse.</p>
-                        <div class="d-flex gap-3 flex-wrap">
-                            <a href="#start-registry" class="btn-primary-custom" style="background-color: var(--accent-terracotta); border-color: var(--accent-terracotta); color: #fff; padding: 12px 28px;">
+                        <div class="d-flex gap-3 flex-wrap flex-lg-nowrap hero-cta-group">
+                            <a href="#start-registry" class="btn-primary-custom hero-cta-btn" style="background-color: var(--accent-terracotta); border-color: var(--accent-terracotta); color: #fff;">
                                 <i class="bi bi-gift"></i> Start Your Registry
                             </a>
-                            <a href="#benefits" class="btn-secondary-custom" style="padding: 12px 28px;">
+                            <a href="#benefits" class="btn-secondary-custom hero-cta-btn">
                                 <i class="bi bi-stars"></i> Explore Registry Perks
                             </a>
                         </div>
                     </div>
+                    <!-- Mobile View: Hero image stacked cleanly below content (one by one) -->
+                    <div class="col-12 d-lg-none mt-3 animate-fade-in">
+                        <img src="https://images.pexels.com/photos/7938081/pexels-photo-7938081.jpeg" alt="Nursery Registry"
+                            class="w-100 shadow-md" style="object-fit: cover; max-height: 400px; border-radius: 20px;">
+                    </div>
                 </div>
             </div>
-            <img src="https://images.pexels.com/photos/7938081/pexels-photo-7938081.jpeg" alt="Nursery Registry"
-                class="w-100 d-lg-none mt-4 animate-fade-in" style="object-fit: cover; max-height: 400px;">
         </section>
 
         <!-- Section 2 - How Registry Works (Timeline) -->
