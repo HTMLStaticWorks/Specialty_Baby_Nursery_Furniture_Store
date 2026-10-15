@@ -5,12 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.setAttribute('data-theme', currentTheme);
 
   const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-btn');
+  const updateThemeIcons = (theme) => {
+    themeToggles.forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        if (theme === 'dark') {
+          icon.className = 'bi bi-sun';
+          btn.setAttribute('aria-label', 'Toggle Light Mode');
+        } else {
+          icon.className = 'bi bi-moon';
+          btn.setAttribute('aria-label', 'Toggle Dark Mode');
+        }
+      }
+    });
+  };
+  updateThemeIcons(currentTheme);
+
   themeToggles.forEach(themeToggle => {
     themeToggle.addEventListener('click', () => {
       let theme = document.documentElement.getAttribute('data-theme');
       let newTheme = theme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+      updateThemeIcons(newTheme);
     });
   });
 
